@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../styles/styles.css"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="shopms.controllers.ShopManagerController"
+            fx:id="borderPane" id="borderPane">
+    <left>
+        <VBox prefHeight="715.0">
+            <Button fx:id="dashboardButton" mnemonicParsing="false" styleClass="navButton" text="DASHBOARD" onAction="#handleViewDashboard">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_space_dashboard_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <MenuButton styleClass="navMenuButton" popupSide="RIGHT" text="PRODUCT">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_inventory_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="CATEGORIES" onAction="#handleViewCategories"/>
+                    <MenuItem text="PRODUCT LIST" onAction="#handleViewProducts"/>
+                    <MenuItem fx:id="addProductMenu" text="ADD PRODUCT" onAction="#handleAddProduct"/>
+                    <MenuItem disable="true" fx:id="printBarcodeMenu" text="PRINT BARCODE" onAction="#handlePrintBarcode"/>
+                </items>
+            </MenuButton>
+            <MenuButton styleClass="navMenuButton" popupSide="RIGHT" text="CUSTOMER">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_group_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="CUSTOMER LIST" onAction="#handleViewCustomers"/>
+                    <MenuItem text="ADD CUSTOMER" onAction="#handleAddCustomer"/>
+                </items>
+            </MenuButton>
+            <MenuButton fx:id="purchaseMenu" styleClass="navMenuButton" popupSide="RIGHT" text="PURCHASE">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_inventory_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="PURCHASE LIST" onAction="#handleViewPurchases"/>
+                    <MenuItem text="ADD PURCHASE" onAction="#handleAddPurchase"/>
+                </items>
+            </MenuButton>
+            <MenuButton styleClass="navMenuButton" popupSide="RIGHT" text="SALE">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_point_of_sale_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="SALE LIST" onAction="#handleViewSales"/>
+                    <MenuItem text="ADD SALE" onAction="#handleAddSale"/>
+                </items>
+            </MenuButton>
+            <MenuButton styleClass="navMenuButton" popupSide="RIGHT" text="RETURN">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_undo_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="RETURN LIST" onAction="#handleViewReturns"/>
+                    <MenuItem text="ADD RETURN" onAction="#handleAddReturn"/>
+                </items>
+            </MenuButton>
+            <MenuButton disable="true" fx:id="reportMenu" styleClass="navMenuButton" popupSide="RIGHT" text="REPORT">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_summarize_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="PROFIT / LOSS" onAction="#handleViewProfitLoss"/>
+                    <MenuItem text="PRODUCT REPORT" onAction="#handleViewProductReport"/>
+                    <MenuItem text="PRODUCT QUANTITY ALERT" onAction="#handleViewProductQuantityAlert"/>
+                    <MenuItem text="CUSTOMER REPORT" onAction="#handleViewCustomerReport"/>
+                    <MenuItem text="DUE REPORT" onAction="#handleViewDueReport"/>
+                </items>
+            </MenuButton>
+            <MenuButton disable="true" fx:id="accountMenu" styleClass="navMenuButton" popupSide="RIGHT" text="ACCOUNTS">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_account_circle_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+                <items>
+                    <MenuItem text="ACCOUNT LIST" onAction="#handleViewAccounts"/>
+                    <MenuItem disable="true" fx:id="addAccountMenu" text="ADD ACCOUNT" onAction="#handleAddAccount"/>
+                </items>
+            </MenuButton>
+            <Button mnemonicParsing="false" styleClass="navButton" text="LOGOUT" onAction="#handleLogout">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/twotone_logout_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleExit" styleClass="navButton" text="EXIT">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../media/1x/outline_close_white_24dp.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+</BorderPane>

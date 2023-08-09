@@ -1,0 +1,30 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane vgap="20" hgap="20" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml" fx:controller="shopms.controllers.customers.EditCustomerController"
+          fx:id="editCustomerGridPane" id="addNewGridPane" stylesheets="@../styles/styles.css"
+          onKeyPressed="#handleKeyPressed">
+
+    <Label styleClass="heading" text="EDIT CUSTOMER"/>
+
+    <Label GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="formLabel" text="Name"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="field" fx:id="nameField"
+               promptText="Name..."/>
+
+    <Label GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="formLabel" text="Company Name"/>
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="field" fx:id="companyNameField"
+               promptText="Company Name..."/>
+
+    <Label GridPane.rowIndex="3" GridPane.columnIndex="0" styleClass="formLabel" text="Address"/>
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="field" fx:id="addressField"
+               promptText="Address..."/>
+
+    <Label GridPane.rowIndex="4" GridPane.columnIndex="0" styleClass="formLabel" text="Phone Number"/>
+    <TextField GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="field" fx:id="phoneNumberField"
+               promptText="Phone Number..."/>
+    <Button styleClass="addButton" GridPane.rowIndex="5" text="Edit Customer"
+            onAction="#handleEditCustomer"/>
+    <Button styleClass="addButton" GridPane.rowIndex="5" GridPane.columnIndex="1" text="Cancel"
+            onAction="#handleCancel"/>
+    <Label GridPane.rowIndex="6" GridPane.columnSpan="2" fx:id="error" styleClass="error" managed="false"/>
+</GridPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<GridPane id="addNewGridPane" fx:id="editSaleGridPane" hgap="20.0" onKeyPressed="#handleKeyPressed"
+          stylesheets="@../styles/styles.css" vgap="20.0" xmlns="http://javafx.com/javafx/16"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopms.controllers.sales.EditSaleController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label styleClass="heading" text="EDIT SALE"/>
+    <HBox alignment="CENTER_RIGHT" prefWidth="1110.0" spacing="20.0">
+        <Label fx:id="invoiceLabel" styleClass="formLabel"/>
+        <Label styleClass="formLabel" text="Customer"/>
+        <ComboBox fx:id="customerCombo" promptText="Customer..." disable="true"/>
+        <Label styleClass="formLabel" text="Date"/>
+        <DatePicker fx:id="saleDatePicker" disable="true"/>
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT" spacing="20.0" GridPane.rowIndex="1">
+        <Label styleClass="formLabel" text="Payment Method"/>
+        <ComboBox fx:id="paymentMethodCombo" promptText="Payment Method..." disable="true">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Cash"/>
+                    <String fx:value="Cheque"/>
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Cash"/>
+            </value>
+        </ComboBox>
+        <Label styleClass="formLabel" text="Paid Amount"/>
+        <TextField fx:id="paidAmountField" promptText="Paid Amount..." styleClass="field"/>
+    </HBox>
+
+    <HBox alignment="CENTER_RIGHT" spacing="20.0" GridPane.rowIndex="2">
+        <HBox visible="false" spacing="20.0" alignment="CENTER" fx:id="chequeHBox" managed="false">
+            <Label styleClass="formLabel" text="Cheque No"/>
+            <TextField fx:id="chequeNoField" promptText="Cheque No..." styleClass="field"/>
+            <Label styleClass="formLabel" text="Cheque Date"/>
+            <DatePicker fx:id="chequeDatePicker"/>
+        </HBox>
+    </HBox>
+
+    <ListView fx:id="productSaleListView" prefHeight="300" prefWidth="1110" style="-fx-font-size: 16px"
+              GridPane.columnSpan="1" GridPane.rowIndex="3"/>
+
+    <HBox alignment="CENTER_RIGHT" spacing="20" GridPane.rowIndex="4">
+        <Label styleClass="formLabel" fx:id="grandTotalLabel" text="Test"/>
+        <Button onAction="#handleTotalRefresh" style="-fx-min-width: 40" styleClass="addButton">
+            <graphic>
+                <ImageView>
+                    <Image url="@../media/1x/baseline_autorenew_white_24dp.png"/>
+                </ImageView>
+            </graphic>
+        </Button>
+
+        <Button fx:id="submitButton" onAction="#handleSubmit" style="-fx-min-width: 120.0;" styleClass="addButton"
+                text="Submit"/>
+        <Button onAction="#handleCancel" styleClass="addButton" text="Cancel"/>
+    </HBox>
+    <Label GridPane.rowIndex="5" fx:id="error" managed="false" styleClass="error"/>
+</GridPane>

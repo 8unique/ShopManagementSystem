@@ -1,0 +1,15 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane vgap="20" hgap="20" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml" fx:controller="shopms.controllers.categories.AddCategoryController"
+          fx:id="addCategoryGridPane" id="addNewGridPane" stylesheets="@../styles/styles.css"
+          onKeyPressed="#handleKeyPressed">
+
+    <Label styleClass="heading" text="ADD CATEGORY"/>
+
+    <Label styleClass="formLabel" GridPane.rowIndex="1" GridPane.columnIndex="0" text="Category Name"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="field" fx:id="categoryField" promptText="Category..."/>
+    <Button styleClass="addButton" GridPane.rowIndex="2" text="Add Category" onAction="#handleAddCategory"/>
+    <Button styleClass="addButton" GridPane.rowIndex="2" GridPane.columnIndex="1" text="Cancel" onAction="#handleCancel"/>
+    <Label GridPane.rowIndex="3" GridPane.columnSpan="2" fx:id="error" styleClass="error" managed="false"/>
+</GridPane>

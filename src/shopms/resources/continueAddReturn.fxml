@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane hgap="20.0" vgap="20.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopms.controllers.returns.AddReturnController"
+          fx:id="addReturnGridPane" onKeyPressed="#handleKeyPressed" id="addNewGridPane">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label styleClass="heading" text="ADD RETURN"/>
+
+    <HBox spacing="20.0" alignment="CENTER_RIGHT">
+        <Label styleClass="formLabel" fx:id="referenceLabel" text="test"/>
+        <TextField styleClass="field" visible="false" managed="false" fx:id="supplierField" promptText="Supplier..."/>
+        <ComboBox managed="false" visible="false" fx:id="customerCombo" promptText="Customer..."/>
+        <DatePicker disable="true" fx:id="returnDatePicker"/>
+    </HBox>
+
+    <ListView style="-fx-font-size: 16px" GridPane.rowIndex="1" fx:id="productReturnListView" GridPane.columnSpan="1"
+              prefWidth="1110" prefHeight="300"/>
+    <HBox GridPane.rowIndex="2" GridPane.columnIndex="0" spacing="20" alignment="CENTER_RIGHT">
+        <Button styleClass="addButton" style="-fx-min-width: 120.0;" text="Submit"
+                onAction="#handleSubmit"/>
+        <Button styleClass="addButton" style="-fx-min-width: 120.0;" text="Back"
+                onAction="#handleBack"/>
+        <Button styleClass="addButton" text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+    <Label GridPane.rowIndex="2" fx:id="error" styleClass="error" managed="false"/>
+</GridPane>

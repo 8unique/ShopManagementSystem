@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<ScrollPane fitToWidth="true" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopms.controllers.reports.ProfitLossController">
+    <GridPane hgap="20.0" vgap="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+        <Label styleClass="heading" text="PROFIT/LOSS"/>
+
+        <HBox spacing="20.0" GridPane.rowIndex="1" alignment="CENTER_LEFT">
+            <Label styleClass="formLabel" text="Choose Range"/>
+            <ComboBox fx:id="dateRangeCombo">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Last Week"/>
+                        <String fx:value="Last 30 Days"/>
+                        <String fx:value="Last 90 Days"/>
+                        <String fx:value="Last Year"/>
+                        <String fx:value="All Time"/>
+                    </FXCollections>
+                </items>
+                <value>
+                    <String fx:value="Last Week"/>
+                </value>
+            </ComboBox>
+        </HBox>
+
+        <VBox alignment="CENTER_LEFT" styleClass="dashboardVBox" GridPane.rowIndex="2">
+            <Label styleClass="dNameLabel" text="Purchases"/>
+            <Label fx:id="purchaseCost" styleClass="dAmountLabel"/>
+            <Label fx:id="purchaseAmount" styleClass="dDateLabel"/>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" styleClass="dashboardVBox" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <Label styleClass="dNameLabel" text="Sales"/>
+            <Label fx:id="saleCost" styleClass="dAmountLabel"/>
+            <Label fx:id="saleAmount" styleClass="dDateLabel"/>
+            <Label fx:id="salePaidAmount" styleClass="dDateLabel"/>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" styleClass="dashboardVBox" GridPane.rowIndex="2" GridPane.columnIndex="2">
+            <Label styleClass="dNameLabel" text="Returns"/>
+            <Label fx:id="returnRefundCost" styleClass="dAmountLabel"/>
+            <Label fx:id="returnAmount" styleClass="dDateLabel"/>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" styleClass="dashboardVBox" GridPane.rowIndex="3" GridPane.columnSpan="3">
+            <Label styleClass="dNameLabel" text="Payment Received"/>
+            <Label fx:id="paymentReceivedAmount" styleClass="dAmountLabel"/>
+            <Label fx:id="paymentsReceived" styleClass="dDateLabel"/>
+            <Label fx:id="paymentCash" styleClass="dDateLabel"/>
+            <Label fx:id="paymentCheque" styleClass="dDateLabel"/>
+        </VBox>
+
+        <VBox alignment="CENTER_LEFT" styleClass="dashboardVBox" GridPane.rowIndex="4" GridPane.columnSpan="3">
+            <Label styleClass="dNameLabel" text="Profit/Loss"/>
+            <Label fx:id="profitLossAmount" styleClass="dAmountLabel"/>
+            <Label fx:id="profitLossDetails" styleClass="dDateLabel"/>
+        </VBox>
+    </GridPane>
+</ScrollPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<GridPane hgap="20.0" vgap="20.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/8"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopms.controllers.accounts.AccountController" onKeyPressed="#handleKeyPressed">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <Label styleClass="heading" text="ACCOUNTS"/>
+    <Button disable="true" fx:id="addAccountButton" styleClass="centerButton" text="ADD ACCOUNT" GridPane.columnIndex="1" onAction="#handleAddAccount">
+        <graphic>
+            <ImageView>
+                <Image url="@../media/1x/baseline_add_white_24dp.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <TableView prefWidth="1110" prefHeight="615" fx:id="accountTableView" GridPane.columnSpan="4" GridPane.rowIndex="1">
+        <columns>
+            <TableColumn text="Username">
+                <cellValueFactory>
+                    <PropertyValueFactory property="username"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Role">
+                <cellValueFactory>
+                    <PropertyValueFactory property="user_role"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+</GridPane>

@@ -1,0 +1,35 @@
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<GridPane vgap="20" hgap="20" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml" fx:controller="shopms.controllers.accounts.EditAccountController"
+          fx:id="editAccountGridPane" id="addNewGridPane" stylesheets="@../styles/styles.css"
+          onKeyPressed="#handleKeyPressed">
+
+    <Label styleClass="heading" text="EDIT ACCOUNT"/>
+
+    <Label styleClass="formLabel" GridPane.rowIndex="1" GridPane.columnIndex="0" text="User Name"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="field" fx:id="usernameField"
+               promptText="Username..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="2" GridPane.columnIndex="0" text="User Role"/>
+    <ComboBox GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="userRoleCombo" promptText="User Role...">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="administrator"/>
+                <String fx:value="staff"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Label styleClass="formLabel" GridPane.rowIndex="3" GridPane.columnIndex="0" text="Password"/>
+    <PasswordField disable="true" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="field" fx:id="passwordField"
+                   promptText="Password..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="4" GridPane.columnIndex="0" text="Your Password"/>
+    <PasswordField GridPane.rowIndex="4" GridPane.columnIndex="1" styleClass="field" fx:id="confirmPasswordField"
+                   promptText="Your Password..."/>
+
+    <Button styleClass="addButton" GridPane.rowIndex="5" text="Edit Account" onAction="#handleEditAccount"/>
+    <Button styleClass="addButton" GridPane.rowIndex="5" GridPane.columnIndex="1" text="Cancel"
+            onAction="#handleCancel"/>
+    <Label GridPane.rowIndex="6" GridPane.columnSpan="2" fx:id="error" styleClass="error" managed="false"/>
+</GridPane>

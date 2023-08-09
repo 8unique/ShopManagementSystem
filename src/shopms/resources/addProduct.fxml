@@ -1,0 +1,36 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane vgap="20" hgap="20" alignment="CENTER"
+          xmlns:fx="http://javafx.com/fxml" fx:controller="shopms.controllers.products.AddProductController"
+          fx:id="addProductGridPane" id="addNewGridPane" stylesheets="@../styles/styles.css"
+          onKeyPressed="#handleKeyPressed">
+
+    <Label styleClass="heading" text="ADD PRODUCT"/>
+
+    <Label styleClass="formLabel" GridPane.rowIndex="1" GridPane.columnIndex="0" text="Product Name"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="field" fx:id="nameField" promptText="Product..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="2" GridPane.columnIndex="0" text="Code"/>
+    <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="field" fx:id="codeField" promptText="Code..."/>
+    <Button style="-fx-max-width: 30;" GridPane.halignment="RIGHT" styleClass="addButton" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#handleGenerateCode">
+        <graphic>
+            <ImageView>
+                <Image url="@../media/1x/baseline_shuffle_white_24dp.png"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Label styleClass="formLabel" GridPane.rowIndex="3" GridPane.columnIndex="0" text="Brand"/>
+    <TextField GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="field" fx:id="brandField" promptText="Brand..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="4" GridPane.columnIndex="0" text="Category"/>
+    <ComboBox GridPane.rowIndex="4" GridPane.columnIndex="1" fx:id="categoryCombo" promptText="Category..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="5" GridPane.columnIndex="0" text="Unit"/>
+    <TextField GridPane.rowIndex="5" GridPane.columnIndex="1" styleClass="field" fx:id="unitField" promptText="500g/1kg/500ml/1l..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="6" GridPane.columnIndex="0" text="Product Unit Price"/>
+    <TextField GridPane.rowIndex="6" GridPane.columnIndex="1" styleClass="field" fx:id="priceField" promptText="Price..."/>
+    <Label styleClass="formLabel" GridPane.rowIndex="7" GridPane.columnIndex="0" text="Quantity"/>
+    <TextField GridPane.rowIndex="7" GridPane.columnIndex="1" styleClass="field" fx:id="quantityField" promptText="Quantity..."/>
+    <Button styleClass="addButton" GridPane.rowIndex="8" text="Add Category" onAction="#handleAddProduct"/>
+    <Button styleClass="addButton" GridPane.rowIndex="8" GridPane.columnIndex="1" text="Cancel" onAction="#handleCancel"/>
+    <Label GridPane.rowIndex="9" GridPane.columnSpan="2" fx:id="error" styleClass="error" managed="false"/>
+</GridPane>
